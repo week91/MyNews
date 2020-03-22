@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {connect} from 'react-redux';
 import {
   Form,
   Input,
@@ -12,7 +13,7 @@ import {
   AutoComplete,
 } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
-
+import {userPostFetch} from '../../store/author/actions'
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 
@@ -74,9 +75,9 @@ const tailFormItemLayout = {
   },
 };
 
-const RegistrationForm = () => {
+const RegistrationForm = (props) => {
   const [form] = Form.useForm();
-
+ 
   const onFinish = values => {
     console.log('Received values of form: ', values);
   };
@@ -182,3 +183,10 @@ const RegistrationForm = () => {
     </Form>
   );
 };
+
+
+const mapDispatchToProps = dispatch => ({
+  userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
+})
+
+export default connect(null, mapDispatchToProps)(RegistrationForm);

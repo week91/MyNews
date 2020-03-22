@@ -5,7 +5,7 @@ import '../../App.css'
 import 'antd/dist/antd.css';
 import {userPostFetch} from '../../store/author/actions'
 import {connect} from 'react-redux';
-
+import { Link} from "react-router-dom";
 
 const NormalLoginForm = (props) => {
   const onFinish = value => {
@@ -48,7 +48,7 @@ const NormalLoginForm = (props) => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <a href="">register now!</a>
+        Or <a href=""><Link to='/aut' >register now!</Link></a>
       </Form.Item>
     </Form></div>
   );

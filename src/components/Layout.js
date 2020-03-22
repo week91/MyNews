@@ -21,6 +21,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FullNews from './news/fullNews';
 import NormalLoginForm from './auth/autForm'
+import RegistrationForm from './auth/authForm'
 
 function NotFound(){
   return (
@@ -135,6 +136,7 @@ function Layout1 (props) {
           <Route path="/allnews"> <FullNews news={News} /></Route>
           <Route path="/news/:id" component={NewsDetail} />
           <Route path="/auth"  ><NormalLoginForm /></Route>
+          <Route path="/aut"  ><RegistrationForm /></Route>
           <Route path='*' component={NotFound} />
           </Switch>
         </div>
