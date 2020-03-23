@@ -6,10 +6,13 @@ import 'antd/dist/antd.css';
 import {userPostFetch} from '../../store/author/actions'
 import {connect} from 'react-redux';
 import { Link} from "react-router-dom";
-
+const ff={
+	"Email": "me@ozgur.dk1",
+	"Password": "SomeSecurePassword123!"
+};
 const NormalLoginForm = (props) => {
-  const onFinish = value => {
-    props.userPostFetch(value)
+  const onFinish = ff => {
+    props.userPostFetch(ff)
         
   };
 

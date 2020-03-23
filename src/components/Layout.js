@@ -124,7 +124,7 @@ function Layout1 (props) {
       <Layout>
         <TopBar />
 
-        <Layout> {loading ? <LoadingSpinner /> : ''}
+        <Layout> {loading ? <LoadingSpinner /> : (
           <Content
             className="site-layout"
             style={{ padding: "50px", marginTop: 64 }}
@@ -142,7 +142,7 @@ function Layout1 (props) {
           </Switch>
         </div>
            
-          </Content>
+          </Content>)}
           <Footer style={{ textAlign: "center" }}>
             ©2020 Created by PVT react cource 
           </Footer>

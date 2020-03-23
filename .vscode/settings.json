@@ -3,6 +3,6 @@
         "node_modules{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.deploySubpath": "build",
-    "appService.defaultWebAppToDeploy": "/subscriptions/2a58ce50-c60e-4be8-8bb1-d35661b442eb/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/gthhttt"
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/2a58ce50-c60e-4be8-8bb1-d35661b442eb/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/zxcvasdfdfw3"
 }
