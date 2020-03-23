@@ -22,6 +22,7 @@ import { bindActionCreators } from 'redux';
 import FullNews from './news/fullNews';
 import NormalLoginForm from './auth/autForm'
 import RegistrationForm from './auth/authForm'
+import LoadingSpinner from './news/loading/loading'
 
 function NotFound(){
   return (
@@ -54,7 +55,7 @@ const menu = (
 function Layout1 (props) {
 
 
-  const { getAllNews1,News } = props;
+  const { getAllNews1,News,loading } = props;
   useEffect(() => {
  
   getAllNews1();
@@ -123,7 +124,7 @@ function Layout1 (props) {
       <Layout>
         <TopBar />
 
-        <Layout>
+        <Layout> {loading ? <LoadingSpinner /> : ''}
           <Content
             className="site-layout"
             style={{ padding: "50px", marginTop: 64 }}
@@ -158,7 +159,8 @@ function Layout1 (props) {
 
 const mapStateToProps = (state) => {
   return {
-    News:state.layout.News
+    News:state.layout.News,
+    loading: state.layout.loading,
   };
 };
 

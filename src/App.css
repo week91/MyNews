@@ -1,4 +1,4 @@
-
+@import  './components/news/loading/loading.css' ;
 @import '~antd/dist/antd.css';
 
 .App {

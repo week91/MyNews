@@ -15,7 +15,7 @@ function NewsDetail(props) {
   return (
     <div>
       <Title>
-        <h2>Товар {NewsDetail.newsTitle} </h2>
+        <h1>Товар {NewsDetail.newsTitle} </h1>
       </Title>
 
       <p>{NewsDetail.bodyNews}</p>
