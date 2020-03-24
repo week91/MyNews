@@ -1,7 +1,7 @@
 
 export const LAUNCH_LOADING = 'LAUNCH_LOADING';
 export const STOP_LOADING = 'STOP_LOADING';
-
+export const PULL_COMMENT = 'SPULL_COMMENT';
 
 export const startLoading = () => {
    return {
@@ -14,12 +14,10 @@ export const startLoading = () => {
      type: STOP_LOADING,
    };
  };
-
-const getNewsById=(id)=>{
-    return{
-           type:GET_NEWS_BYID ,
-           payload:id
-};
+ export const pullComment = () => {
+  return {
+    type: PULL_COMMENT,
+  };
 };
 
 
@@ -28,7 +26,7 @@ export const getNewsByIdData=(idNews)=>(dispatch)=>{ dispatch(startLoading());
     method: 'GET'
 })
    .then(response => response.json())
-   .then(json=>dispatch(getNewsById(json)))
+   .then(json=>dispatch(pullComment(json)))
    .then( dispatch(stopLoading()))
    
 }
