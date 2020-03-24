@@ -2,10 +2,11 @@ import{ LOGIN_USER } from './actions'
 
 
 const initialState = {
-    currentUser: {}
+    currentUser: {
+    }
   }
   
-  export default function reducer(state = initialState, action) {
+  export function reducerAuth(state = initialState, action) {
       switch (action.type) {
         case LOGIN_USER:
           return {...state, currentUser: action.payload}

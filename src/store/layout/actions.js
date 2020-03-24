@@ -34,9 +34,9 @@ export const getAllNews1=()=>(dispatch)=>{
        .then(
          setTimeout(() => {
            dispatch(stopLoading());
-         }, 1000),
+         }, 500),
        );
-   }, 1000);
+   }, 500);
 
 
 
