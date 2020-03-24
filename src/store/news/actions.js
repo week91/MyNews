@@ -1,6 +1,4 @@
-export const GET_NEWS_BYID = 'GET_NEWS_BYID';
-export const POST_NEWS = 'POST_NEWS';
-export const DELETE_NEWS = 'DELETE_NEWS';
+
 export const LAUNCH_LOADING = 'LAUNCH_LOADING';
 export const STOP_LOADING = 'STOP_LOADING';
 
