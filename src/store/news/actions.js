@@ -1,7 +1,9 @@
-
+export const GET_NEWS_BYID = 'GET_NEWS_BYID';
+export const POST_NEWS = 'POST_NEWS';
+export const DELETE_NEWS = 'DELETE_NEWS';
 export const LAUNCH_LOADING = 'LAUNCH_LOADING';
 export const STOP_LOADING = 'STOP_LOADING';
-export const PULL_COMMENT = 'SPULL_COMMENT';
+
 
 export const startLoading = () => {
    return {
@@ -14,10 +16,12 @@ export const startLoading = () => {
      type: STOP_LOADING,
    };
  };
- export const pullComment = () => {
-  return {
-    type: PULL_COMMENT,
-  };
+
+const getNewsById=(id)=>{
+    return{
+           type:GET_NEWS_BYID ,
+           payload:id
+};
 };
 
 
@@ -26,7 +30,7 @@ export const getNewsByIdData=(idNews)=>(dispatch)=>{ dispatch(startLoading());
     method: 'GET'
 })
    .then(response => response.json())
-   .then(json=>dispatch(pullComment(json)))
+   .then(json=>dispatch(getNewsById(json)))
    .then( dispatch(stopLoading()))
    
 }
