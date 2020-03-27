@@ -1,135 +1,150 @@
-@import  './components/news/loading/loading.css' ;
-@import '~antd/dist/antd.css';
+@import "./components/news/loading/loading.css";
+@import "~antd/dist/antd.css";
 
 .App {
-  
   text-align: center;
 }
+.topbar {
+  
+  position: "fixed";
+  zindex: 1;
+  width: "100%";
+}
+.homepage {
+  padding: 150px;
+  width: 20%;
 
-
+  background: url("https://i1.wp.com/www.zombiesoftwares.com/blog/wp-content/uploads/2017/01/home_page.png?w=296");
+}
+.menu{
+  
+  
+  overflow: auto;
+ 
+}
 * {
   margin: auto;
- 
+
   box-sizing: border-box;
 }
-
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+.HomePage {
+  background-image: url(https://i1.wp.com/www.zombiesoftwares.com/blog/wp-content/uploads/2017/01/home_page.png?w=296);
+}
 
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Oswald", sans-serif;
+  font-size: 100%;
+  margin: 0;
+  text-align: center;
+}
+.wrapper {
+  height: 50px;
+  margin-top: calc(50vh - 25px);
+  margin-left: calc(50vw - 100px);
+  width: 180px;
+}
+.circle {
+  border-radius: 50%;
+  border: 3px #0a0a0a solid;
+  float: left;
+  height: 50px;
+  margin: 0 5px;
+  width: 50px;
+}
+.circle-1 {
+  animation: move 1s ease-in-out infinite;
+}
+.circle-1a {
+  animation: fade 1s ease-in-out infinite;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.circle-2 {
+  animation: move 1s ease-in-out infinite;
+}
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(60px);
+  }
+}
+.circle-1a {
+  margin-left: -55px;
+  opacity: 0;
+}
+.circle-3 {
+  animation: circle-3 1s ease-in-out infinite;
+  opacity: 1;
+}
+@keyframes circle-3 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
+h1 {
+  color: #222;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 40px auto;
+  text-transform: uppercase;
+}
 
+.dss {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 26px;
+  grid-row-gap: 26px;
+}
 
-    @import url(https://fonts.googleapis.com/css?family=Oswald);
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      background-color: rgb(255, 255, 255);
-      font-family: 'Oswald', sans-serif;
-      font-size: 100%;
-      margin: 0;
-      text-align: center;
-     
-    }
-    .wrapper {
-      height: 50px;
-      margin-top: calc(50vh - 25px);
-      margin-left: calc(50vw - 100px);
-      width: 180px;
-    }
-    .circle {
-      border-radius: 50%;
-      border: 3px #0a0a0a solid;
-      float: left;
-      height: 50px;
-      margin: 0 5px;
-      width: 50px;
-    }
-      .circle-1 {
-        animation: move 1s ease-in-out infinite;
-      }
-      .circle-1a {
-        animation: fade 1s ease-in-out infinite;
-      }
-      @keyframes fade {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
-      }
-      .circle-2 {
-        animation: move 1s ease-in-out infinite;
-      }
-      @keyframes move {
-        0% {transform: translateX(0);}
-        100% {transform: translateX(60px);}
-      }
-      .circle-1a {
-        margin-left: -55px;
-        opacity: 0;
-      }
-      .circle-3 {
-        animation: circle-3 1s ease-in-out infinite;
-        opacity: 1;
-      }
-      @keyframes circle-3 {
-        0% {opacity: 1;}
-        100% {opacity: 0;}
-      }
+.logo {
+  width: 120px;
+  height: 31px;
+  margin: 0;
+  float: left;
+  color: rgb(212, 212, 212);
+  font-size: large;
+}
+.site-layout .site-layout-background {
+  background: rgb(143, 29, 29);
+}
+[data-theme="dark"] .site-layout .site-layout-background {
+  background: #141414;
+}
+.rr {
+  margin-top: 60px;
+}
 
-    h1 {
-      color: #222;
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      margin: 40px auto;
-      text-transform: uppercase;
-    }
-
-
-    .dss {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 26px;
-      grid-row-gap: 26px;
-
-     
-      }
-
-
-      .logo {
-        width: 120px;
-        height: 31px;
-                margin:  0;
-        float: left;
-       color: rgb(212, 212, 212);
-      font-size: large;      
-        
-
-       
-        
-      }
-      .site-layout .site-layout-background {
-        background: rgb(143, 29, 29);
-       
-      }
-        [data-theme="dark"] .site-layout .site-layout-background {
-          background: #141414;
-        }
-     .rr{
-     margin-top: 60px;
-     }
-
-     #components-form-demo-normal-login .login-form {
-      max-width: 300px;
-    }
-    #components-form-demo-normal-login .login-form-forgot {
-      float: right;
-    }
-    #components-form-demo-normal-login .login-form-button {
-      width: 100%;
-    }
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}

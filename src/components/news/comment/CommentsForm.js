@@ -6,7 +6,7 @@ import { Form,List,Comment,Avatar, Input,  Button } from 'antd';
 const { TextArea } = Input;
 
 const CommentList = ({ comments }) => (
-  <List
+  <List  className="comment"
     dataSource={comments}
     header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
     itemLayout="horizontal"
@@ -26,13 +26,15 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
     </Form.Item>
   </div>
 );
-
 class CommentForm extends React.Component {
-  state = {
-    comments: [],
+  constructor(props) {
+    super(props);
+   
+ this.state = {
+    comments: "",
     submitting: false,
     value: '',
-  };
+  };}
 
   handleSubmit = () => {
     if (!this.state.value) {
@@ -71,14 +73,9 @@ class CommentForm extends React.Component {
 
     return (
       <div>
-        {comments.length > 0 && <CommentList comments={comments} />}
+        {comments.length > 0 && <CommentList  comments={comments} />}
         <Comment
-          avatar={
-            <Avatar
-              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-              alt="Han Solo"
-            />
-          }
+         
           content={
             <Editor
               onChange={this.handleChange}

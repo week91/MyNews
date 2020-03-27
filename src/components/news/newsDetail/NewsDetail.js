@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../../../App.css'
 import { Typography  } from 'antd';
 import CommentForm from '../comment/CommentsForm'
@@ -15,11 +15,12 @@ function NewsDetail(props) {
   return (
     <div>
       <Title>
-        <h1>Товар {NewsDetail.newsTitle} </h1>
+        {NewsDetail.newsTitle} 
       </Title>
 
       <p>{NewsDetail.bodyNews}</p>
-      {NewsDetail.source}
+     <p>{NewsDetail.source}</p> 
+     <p>{NewsDetail.id}</p> 
       <CommentForm commentData={NewsDetail.commetns} />
     </div>
   );

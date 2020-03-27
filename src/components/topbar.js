@@ -1,59 +1,66 @@
-import React from 'react';
-import '../App.css';
-import { Layout} from 'antd';
-import { DownOutlined } from '@ant-design/icons';
-import { Menu, Dropdown } from 'antd';
-import { Link} from "react-router-dom";
+import React from "react";
+import "../App.css";
+import { Layout } from "antd";
+import { Menu } from "antd";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logoutUser } from "../store/registr/actions";
+import { userPostFetchGet } from "../store/registr/actions";
 
+const { Header } = Layout;
 
+function TopBar(props) {
+  const { logoutUser } = props;
 
-const { Header,} = Layout;
-const menu = (
-    <Menu>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-          1st menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-          2nd menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-          3rd menu item
-        </a>
-      </Menu.Item>
-    </Menu>
+  const handleClick = event => {
+    event.preventDefault();
+    localStorage.removeItem("token");
+    logoutUser();
+  };
+
+  return (
+    <Header className="topbar">
+      <Link className="logo" to="/">
+        My News
+      </Link>
+
+      <Menu
+        className="menu"
+        title="topbar"
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={["1"]}
+        style={{ lineHeight: "64px"}}
+      >
+        <Menu.Item key="1">
+                   <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item key="4">
+          <Link to="/allnews">All my News</Link>
+        </Menu.Item>
+        <Menu.Item key="3">
+          {props.currentUser ? (
+            <Link to="/" onClick={handleClick}>
+              Log Out
+            </Link>
+          ) : (
+            <Link to="/auth">Autorization</Link>
+          )}
+        </Menu.Item>
+      </Menu>
+    </Header>
   );
+}
 
-  function TopBar() {
-    return (<Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
-    <a className="logo"><Link to='/' >My News</Link></a>{" "}
-    <Menu
-      title="ghghg"
-      theme="dark"
-      mode="horizontal"
-      defaultSelectedKeys={["1"]}
-      style={{ lineHeight: "64px" }}
-    >
-      <Menu.Item  key="1"> <Link to='/'>Home</Link></Menu.Item>
-      <Menu.Item key="4"><Link to='/allnews'>All News</Link></Menu.Item>
-      <Menu.Item key="2">
-   
-       
-        <Dropdown overlay={menu}>
-          <a
-            className="ant-dropdown-link"
-            onClick={e => e.preventDefault()}
-          >
-            News category <DownOutlined />
-          </a>
-        </Dropdown>
-      </Menu.Item>
-      <Menu.Item key="3"><Link to='/auth'>autorization</Link></Menu.Item>
-    </Menu>
-  
-  </Header>);}
-export default TopBar;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.RegistLoginOut.currentUser.email
+  };
+};
+
+const mapDispatchToProps = {
+  userPostFetchGet,
+  logoutUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopBar);

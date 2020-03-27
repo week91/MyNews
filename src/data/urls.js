@@ -1,7 +1,6 @@
 export const Urls = {
-    newsUrl: 'http://localhost:3001/actors',
-    maincast: 'http://localhost:3001/actors?majority=maincast',
-    secondary: 'http://localhost:3001/actors?majority=secondary',
-    male: 'http://localhost:3001/actors?gender=Male',
-    female: 'http://localhost:3001/actors?gender=Female',
+    allnews: "https://newsapi1.azurewebsites.net/api/news",
+    getlogin: "https://newsapi1.azurewebsites.net/ValuesJwt/GetLogin",
+    login: 'https://newsapi1.azurewebsites.net/Account/login',
+    register: 'https://newsapi1.azurewebsites.net/Account/register',
   };

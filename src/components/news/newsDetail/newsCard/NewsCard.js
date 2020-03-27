@@ -1,10 +1,7 @@
 import React from 'react';
 import '../../../../App.css'
 import { Card } from 'antd';
-import {BrowserRouter, Route, Switch, Link} from "react-router-dom";
-
-
-
+import {BrowserRouter} from "react-router-dom";
 
 const { Meta } = Card;
 function NewsCard(props) {
@@ -27,7 +24,7 @@ function NewsCard(props) {
             />
           }
         >
-          <Meta title={news.newsTitle} description={news.id} />
+          <Meta title={news.newsTitle} description={news.dateCreate} />
         </Card>
        
         </div>
