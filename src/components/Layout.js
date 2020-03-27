@@ -30,9 +30,9 @@ function Layout1(props) {
     getAllNews1();
   },[]);
 
-  useEffect(() => {
-    userPostFetchGet();
-  } );
+ // useEffect(() => {
+ //   userPostFetchGet();
+ // });
   return (
     <Router>
      

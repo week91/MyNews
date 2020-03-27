@@ -1,4 +1,3 @@
-import {Urls} from '../../data/urls'
 export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const LOGIN_USER1 = "LOGIN_USER";
@@ -21,7 +20,7 @@ export const userPostFetchGet = () => {
   return dispatch => {
     const token1 = localStorage.getItem("token");
     if (token1) {
-      return fetch(Urls.getlogin, {
+      return fetch("https://newsapi1.azurewebsites.net/ValuesJwt/GetLogin", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +35,7 @@ export const userPostFetchGet = () => {
             localStorage.removeItem("token");
           } else {
             
-            dispatch(loginUser(data));
+            dispatch(loginUser1(data));
           }
         });
     }
@@ -45,7 +44,7 @@ export const userPostFetchGet = () => {
 
 export const userPostRegistration = user => {
   return dispatch => {
-    return fetch("https://localhost:44383/Account/register", {
+    return fetch("https://newsapi1.azurewebsites.net/Account/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,17 +58,17 @@ export const userPostRegistration = user => {
           console.log("неверный фомат");
         } else {
           console.log(data);
-          localStorage.setItem("token", data.jwt);
+          localStorage.setItem("token", data.access_token);
           dispatch(loginUser(user));
         }
       });
-  };
-};
+  };}
+
 
 export const userPostFetch = user => {
 
   return dispatch => {
-    return fetch("https://localhost:44383/Account/login", {
+    return fetch("https://newsapi1.azurewebsites.net/Account/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +83,7 @@ export const userPostFetch = user => {
         } else {
           localStorage.setItem("token", data.jwt.result);
           console.log(data.email);
-          dispatch(loginUser1(data));
+          dispatch(loginUser1(data.email));
         }
       });
   };
